@@ -1,0 +1,12 @@
+
+Bootstrap : 
+
+ bootstrap.css : v3.3.4 (http://getbootstrap.com)   
+ bootstrap.min.css ONLY
+
+ bootstrap.js  : v3.3.4 (http://getbootstrap.com)
+ bootstrap.min.js  ONLY
+ 
+jQuery ( for Bootstrap ) : 
+
+ jquery.js :  v2.1.1
