@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+
+    <title>Telosys DSL syntax</title>
+    <meta name="description" content="Telosys DSL syntax">
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="./css/landing-page.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicon tags -->
+    <link rel="apple-touch-icon" sizes="180x180" href="http://telosys.org/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="http://telosys.org/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://telosys.org/favicon-16x16.png" sizes="16x16">
+    <!-- <link rel="manifest" href="http://telosys.org/manifest.json">  -->
+    <link rel="mask-icon" href="http://telosys.org/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    
+<style>
+p        { font-family: Courier New; font-weight: bold; }
+span.comment { color: green; }
+span.entity  { color: red; }
+span.type    { color: blue; }
+span.annot   { color: purple; }
+
+}
+</style>
+
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="index.html"><i
+               class="fa fa-home fa-fw"></i>Telosys</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="models.html">Telosys models</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="content-section-b"> <!-- IMAGE + TEXT (white background) -->
+    <div class="container">
+        <div class="row">
+
+        <h1>Telosys models - DSL syntax</h1>
+        
+        <h2>Examples of entities : </h2>
+
+<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+
+<span class="comment">// Entity Driver </span><br>
+<span class="comment">// Defines a person who is able to drive a car</span><br>
+<span class="entity">Driver</span>  { <br>
+
+&nbsp; id :         <span class="type">long</span>     { <span class="annot">@Id </span>  } ; <br>
+&nbsp; firstName :  <span class="type">string</span>   { <span class="annot">@SizeMax(20), @NotEmpty</span> } ; <br>
+&nbsp; lastName :   <span class="type">string</span>   { <span class="annot">@SizeMax(20), @NotEmpty</span>  } ;<br>
+&nbsp; birthDate :  <span class="type">date</span>     { <span class="annot">@Past</span> };<br>
+&nbsp; certified :  <span class="type">boolean</span>   ;<br>
+}<br>
+
+</p>
+        
+<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+
+<span class="comment">// Entity Car</span><br>
+<span class="entity">Car</span>  { <br>
+
+&nbsp; id :     <span class="type">int</span>     { <span class="annot">@Id, @AutoIncremented</span> } ; <span class="comment">// this id is autoincremented </span> <br>
+&nbsp; name :   <span class="type">string</span>  { <span class="annot">@SizeMax(40)</span> } ; <br>
+&nbsp; year :   <span class="type">short</span>   { <span class="annot">@Min(1900), @Max(2020)</span> } ;<br>
+&nbsp; price :  <span class="type">float</span>   { <span class="annot">@Min(500), @Max(99999)</span> };<br>
+&nbsp; brand :  <span class="entity">Brand</span> { <span class="annot">@NotNull</span> } ;<br>
+&nbsp; driver : <span class="entity">Driver</span>[]  ;<br>
+}<br>
+
+</p>
+
+        
+        
+        <h3>Syntax : </h3>
+
+        <h4>Comments  </h4>
+<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+A comment starts with // <br>
+All the end of line is the comment<br>
+Comments are only "single line"<br>
+<br>
+
+</p>
+
+        <h4>Entity structure </h4>
+<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+xxx <br>
+xx<br>
+xxx<br>
+<br>
+
+</p>
+
+        <h4>Attribute structure </h4>
+<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+xxx <br>
+xxx<br>
+xx<br>
+<br>
+
+</p>
+        
+        <h4>Attribute name </h4>
+<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+xxx <br>
+xxx<br>
+xx<br>
+<br>
+
+</p>
+
+        <h4>Attribute types </h4>
+<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+xxx <br>
+xxx<br>
+xx<br>
+<br>
+
+</p>
+        
+        <h4>Attribute references </h4>
+<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+xxx <br>
+xxx<br>
+xx<br>
+<br>
+
+</p>
+        
+        <h4>Attribute annotations </h4>
+<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+xxx <br>
+xxx<br>
+xx<br>
+<br>
+
+</p>
+        
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.content-section-b -->
+
+<!-- jQuery -->
+<script src="../../js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../../js/bootstrap.min.js"></script>
+
+</body>
+</html>
