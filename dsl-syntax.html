@@ -123,7 +123,7 @@ span.example { color: DarkMagenta ; }
 <div class="box">
 <p class="title">Comments  </p>
 <p class="code" >
-A comment starts with "//" <br>
+A comment starts with <span class="example">"//"</span> <br>
 All the end of line is the comment<br>
 Comments are only "single line"<br>
 </p>
@@ -138,12 +138,12 @@ The entity's structure is composed of the entity name
 followed by a block containing all the entity's attributes <br>
 The block of attributes starts with '{' and ends with '}'<br>
 <br>
+Structure : <br>
 <span class="example">
-EntityName {  <br>
-&nbsp; attributes list <br>
-} <br>
+&nbsp; &nbsp; EntityName {  <br>
+&nbsp; &nbsp; &nbsp; attributes list <br>
+&nbsp; &nbsp; } <br>
 </span>
-<br>
 </p>
 </div>
 <!--   ----------   -->
@@ -157,19 +157,16 @@ The name of the entity must be composed of letters and numbers and "_" (undersco
 Other characters are not allowed<br>
 By convention the name usually starts with an upper case character <br>
 The entity name must be the same as the file name ( "Car.entity" => "Car" )<br>
-Examples of valid entity names : <br>
-<span class="example">
-&nbsp; . Car <br>
-&nbsp; . Car123<br>
-&nbsp; . CarOwner<br>
-&nbsp; . Car_owner<br>
-</span>
-Examples of invalid entity names : <br>
-<span class="example">
-&nbsp; . Car#12<br>
-&nbsp; . Car+Owner<br>
-</span>
 <br>
+Examples of valid entity names : <br>
+&nbsp; . <span class="example">Car </span><br>
+&nbsp; . <span class="example">Car123</span><br>
+&nbsp; . <span class="example">CarOwner</span><br>
+&nbsp; . <span class="example">Car_owner</span><br>
+<br>
+Examples of invalid entity names : <br>
+&nbsp; . <span class="example">Car#12 </span> ( "#" not allowed )<br>
+&nbsp; . <span class="example">Car+Owner </span> ( "+" not allowed )<br>
 </p>
 </div>
 <!--   ----------   -->
@@ -179,12 +176,16 @@ Examples of invalid entity names : <br>
 <p class="title">Attribute structure  </p>
 <p class="code" >
 An attribute structure is composed of <br>
-. attribute name <br>
-. ':' separator<br>
-. attribute type or reference<br>
-. optional annotations defined between '{' and '}' <br>
-. ';' closing the attribute definition<br>
- 
+. attribute <span class="example">name</span> <br>
+. <span class="example">":" separator </span><br>
+. attribute <span class="example">type</span> (or reference)<br>
+. optional <span class="example">annotations</span> defined between '{' and '}' <br>
+. <span class="example">";" separator</span> (closing the attribute definition)<br>
+<br>
+Structure : <br>
+<span class="example">
+&nbsp; &nbsp; attributeName : attributeType { annotations } ; <br>
+</span>
 </p>
 </div>
 <!--   ----------   -->
@@ -198,19 +199,15 @@ Other characters are not allowed<br>
 By convention the name usually starts with an lower case character <br>
 <br>
 Examples of valid attribute names : <br>
-<span class="example">
-&nbsp; . age <br>
-&nbsp; . firstName<br>
-&nbsp; . first_name<br>
-&nbsp; . flag12 <br>
-</span>
+&nbsp; . <span class="example">age </span><br>
+&nbsp; . <span class="example">firstName</span><br>
+&nbsp; . <span class="example">first_name</span><br>
+&nbsp; . <span class="example">flag12</span><br>
 <br>
 Examples of invalid attribute names : <br>
-<span class="example">
-&nbsp; . flag#12 <br>
-&nbsp; . first-name<br>
-&nbsp; . $code<br>
-</span>
+&nbsp; . <span class="example">flag#12 </span> ( "#" not allowed ) <br>
+&nbsp; . <span class="example">first-name </span> ( "-" not allowed ) <br>
+&nbsp; . <span class="example">$code </span> ( "$" not allowed ) <br>
 </p>
 </div>
 <!--   ----------   -->
@@ -220,7 +217,7 @@ Examples of invalid attribute names : <br>
 <p class="title">Attribute type </p>
 <p class="code" >
 The attribute type can be a "basic type" or a "reference to another entity".<br> 
-<br>
+<hr>
 A "basic type" is a "neutral type" independent of any programming language. <br>
 Available basic types :<br>
 &nbsp; . <span class="example"> binary </span><br>
@@ -238,13 +235,13 @@ Available basic types :<br>
 &nbsp; . <span class="example"> timestamp </span><br>
 All of these "neutral types" are converted into the target language types during generation.<br>
 Telosys offers automatic conversion for most used languages (Java, C#, etc).<br>
-<br>
+<hr>
 A "reference" is defined by using an entity name instead of the basic type. <br>
 The referenced entity must exist in the model (at least the entity file).<br>
 To reference a collection of entities just add "[ ]" after the entity name.<br>
 Examples : <br>
-&nbsp; . <span class="example"> Driver </span> (to reference a single Driver instance, "to one" cardinality)<br>
-&nbsp; . <span class="example"> Driver[] </span> (to reference a collection of Driver instances, "to many" cardinality)<br>
+&nbsp; . <span class="example"> Driver </span> (to reference a single Driver instance, "0..1" cardinality)<br>
+&nbsp; . <span class="example"> Driver&nbsp;[&nbsp;]&nbsp; </span> (to reference a collection of Driver instances, "0..N" cardinality)<br>
 
 </p>
 </div>
@@ -254,8 +251,30 @@ Examples : <br>
 <div class="box">
 <p class="title">Attribute annotations  </p>
 <p class="code" >
-xxx <br>
-xx<br>
+Each attribute can have 0 to N annotations.<br>
+Annotations provide additional information usable during the code generation.<br>
+An annotation is a predefined word starting with "@".<br>
+Some annotations may have values specified between "(" and ")".<br>
+All the annotations must be enclosed between "{" and "}"<br>
+<br>
+Available annotations :<br>
+&nbsp; . <span class="example"> @AutoIncremented </span> : the attribute is supposed to be auto-incremented (typically for a key, with "@Id" annotation)<br>
+&nbsp; . <span class="example"> @Embedded </span> : the entity referenced by the attribute must be embedded (typically for NoSQL databases)<br>
+&nbsp; . <span class="example"> @Future </span> : the attribute value (for "date" type) must be in the future <br>
+&nbsp; . <span class="example"> @Id </span> : the attribute is the ID for the current entity (only one @Id annotation in the same entity)<br>
+&nbsp; . <span class="example"> @LongText </span> : the attribute value (for "string" type) is a long text (typically for a "text area" or "CLOB") <br>
+&nbsp; . <span class="example"> @Max(int value) </span> : the attribute max value (for numeric types)  <br>
+&nbsp; . <span class="example"> @Min(int value) </span> : the attribute min value (for numeric types) <br>
+&nbsp; . <span class="example"> @NotBlank </span> : the attribute value cannot be blank <br>
+&nbsp; . <span class="example"> @NotEmpty </span> : the attribute value cannot be empty <br>
+&nbsp; . <span class="example"> @NotNull </span> : the attribute value cannot be null <br>
+&nbsp; . <span class="example"> @ObjectType </span> : the attribute basic type must be converted to "object/wrapper type" (if possible with the target language) <br>
+&nbsp; . <span class="example"> @Past </span> : the attribute value (for "date" type) must be in the past <br>
+&nbsp; . <span class="example"> @PrimitiveType </span> : the attribute basic type must be converted to "primitive type" (if possible with the target language) <br>
+&nbsp; . <span class="example"> @SizeMax(int value) </span> : the attribute max size (typically for input field or string size) <br>
+&nbsp; . <span class="example"> @SizeMin(int value) </span> : the attribute min size (typically for input field or string size) <br>
+&nbsp; . <span class="example"> @SqlType </span> : the attribute basic type must be converted to "sql type" (typically for Java language) <br>
+&nbsp; . <span class="example"> @UnsignedType </span> : the attribute basic type must be converted to "unsigned type" (if possible with the target language) <br>
 </p>
 </div>
 <!--   ----------   -->
