@@ -31,11 +31,19 @@
     <meta name="theme-color" content="#ffffff">
     
 <style>
-p        { font-family: Courier New; font-weight: bold; }
+/* div.box { border-style:solid; border-color: gray ; border-width: 1px; padding: 15px ; background: LightGray ; } */
+div.box { border-style:solid; border-color: gray ; border-width: 1px; padding: 15px ; }
+/* p     { font-family: Courier New; font-weight: bold; } */
+p.box { border-style:solid; border-color: gray ; border-width: 1px; padding: 15px }
+p.title { font-family: Tahoma; font-weight: bold; font-size: 18px; }
+p.codebox { font-family: Courier New; font-weight: bold;  border-style:solid; border-color: gray ; border-width: 1px; padding: 15px }
+p.code { font-family: Courier New; font-weight: bold; }
+
 span.comment { color: green; }
 span.entity  { color: red; }
 span.type    { color: blue; }
 span.annot   { color: purple; }
+span.example { color: DarkMagenta ; }
 
 }
 </style>
@@ -79,7 +87,7 @@ span.annot   { color: purple; }
         
         <h2>Examples of entities : </h2>
 
-<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+<p class="codebox" >
 
 <span class="comment">// Entity Driver </span><br>
 <span class="comment">// Defines a person who is able to drive a car</span><br>
@@ -94,7 +102,7 @@ span.annot   { color: purple; }
 
 </p>
         
-<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+<p  class="codebox" >
 
 <span class="comment">// Entity Car</span><br>
 <span class="entity">Car</span>  { <br>
@@ -109,72 +117,149 @@ span.annot   { color: purple; }
 
 </p>
 
+<h3>Syntax : </h3>
         
-        
-        <h3>Syntax : </h3>
-
-        <h4>Comments  </h4>
-<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
-A comment starts with // <br>
+<!--   ----------   -->
+<div class="box">
+<p class="title">Comments  </p>
+<p class="code" >
+A comment starts with "//" <br>
 All the end of line is the comment<br>
 Comments are only "single line"<br>
+</p>
+</div>
+<!--   ----------   -->
 <br>
+<!--   ----------   -->
+<div class="box">
+<p class="title">Entity structure  </p>
+<p class="code" >
+The entity's structure is composed of the entity name 
+followed by a block containing all the entity's attributes <br>
+The block of attributes starts with '{' and ends with '}'<br>
+<br>
+<span class="example">
+EntityName {  <br>
+&nbsp; attributes list <br>
+} <br>
+</span>
+<br>
+</p>
+</div>
+<!--   ----------   -->
+<br>
+<!--   ----------   -->
+<div class="box">
+<p class="title">Entity name  </p>
+<p class="code" >
+<br>
+The name of the entity must be composed of letters and numbers and "_" (underscore)<br>
+Other characters are not allowed<br>
+By convention the name usually starts with an upper case character <br>
+The entity name must be the same as the file name ( "Car.entity" => "Car" )<br>
+Examples of valid entity names : <br>
+<span class="example">
+&nbsp; . Car <br>
+&nbsp; . Car123<br>
+&nbsp; . CarOwner<br>
+&nbsp; . Car_owner<br>
+</span>
+Examples of invalid entity names : <br>
+<span class="example">
+&nbsp; . Car#12<br>
+&nbsp; . Car+Owner<br>
+</span>
+<br>
+</p>
+</div>
+<!--   ----------   -->
+<br>
+<!--   ----------   -->
+<div class="box">
+<p class="title">Attribute structure  </p>
+<p class="code" >
+An attribute structure is composed of <br>
+. attribute name <br>
+. ':' separator<br>
+. attribute type or reference<br>
+. optional annotations defined between '{' and '}' <br>
+. ';' closing the attribute definition<br>
+ 
+</p>
+</div>
+<!--   ----------   -->
+<br>
+<!--   ----------   -->
+<div class="box">
+<p class="title">Attribute name  </p>
+<p class="code" >
+The attribute name must be composed of letters and numbers and "_" (underscore)<br>
+Other characters are not allowed<br>
+By convention the name usually starts with an lower case character <br>
+<br>
+Examples of valid attribute names : <br>
+<span class="example">
+&nbsp; . age <br>
+&nbsp; . firstName<br>
+&nbsp; . first_name<br>
+&nbsp; . flag12 <br>
+</span>
+<br>
+Examples of invalid attribute names : <br>
+<span class="example">
+&nbsp; . flag#12 <br>
+&nbsp; . first-name<br>
+&nbsp; . $code<br>
+</span>
+</p>
+</div>
+<!--   ----------   -->
+<br>
+<!--   ----------   -->
+<div class="box">
+<p class="title">Attribute type </p>
+<p class="code" >
+The attribute type can be a "basic type" or a "reference to another entity".<br> 
+<br>
+A "basic type" is a "neutral type" independent of any programming language. <br>
+Available basic types :<br>
+&nbsp; . <span class="example"> binary </span><br>
+&nbsp; . <span class="example"> boolean </span><br>
+&nbsp; . <span class="example"> byte </span><br>
+&nbsp; . <span class="example"> date </span><br>
+&nbsp; . <span class="example"> decimal </span><br>
+&nbsp; . <span class="example"> double </span><br>
+&nbsp; . <span class="example"> float </span><br>
+&nbsp; . <span class="example"> int </span><br>
+&nbsp; . <span class="example"> long </span><br>
+&nbsp; . <span class="example"> short </span><br>
+&nbsp; . <span class="example"> string </span><br>
+&nbsp; . <span class="example"> time </span><br>
+&nbsp; . <span class="example"> timestamp </span><br>
+All of these "neutral types" are converted into the target language types during generation.<br>
+Telosys offers automatic conversion for most used languages (Java, C#, etc).<br>
+<br>
+A "reference" is defined by using an entity name instead of the basic type. <br>
+The referenced entity must exist in the model (at least the entity file).<br>
+To reference a collection of entities just add "[ ]" after the entity name.<br>
+Examples : <br>
+&nbsp; . <span class="example"> Driver </span> (to reference a single Driver instance, "to one" cardinality)<br>
+&nbsp; . <span class="example"> Driver[] </span> (to reference a collection of Driver instances, "to many" cardinality)<br>
 
 </p>
-
-        <h4>Entity structure </h4>
-<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
+</div>
+<!--   ----------   -->
+<br>
+<!--   ----------   -->
+<div class="box">
+<p class="title">Attribute annotations  </p>
+<p class="code" >
 xxx <br>
 xx<br>
-xxx<br>
-<br>
-
 </p>
+</div>
+<!--   ----------   -->
 
-        <h4>Attribute structure </h4>
-<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
-xxx <br>
-xxx<br>
-xx<br>
-<br>
-
-</p>
-        
-        <h4>Attribute name </h4>
-<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
-xxx <br>
-xxx<br>
-xx<br>
-<br>
-
-</p>
-
-        <h4>Attribute types </h4>
-<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
-xxx <br>
-xxx<br>
-xx<br>
-<br>
-
-</p>
-        
-        <h4>Attribute references </h4>
-<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
-xxx <br>
-xxx<br>
-xx<br>
-<br>
-
-</p>
-        
-        <h4>Attribute annotations </h4>
-<p style="border-style:solid; border-color: gray ; border-width: 1px; padding: 15px" >
-xxx <br>
-xxx<br>
-xx<br>
-<br>
-
-</p>
         
         </div>
     </div> <!-- /.container -->
