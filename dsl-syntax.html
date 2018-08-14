@@ -109,7 +109,8 @@ span.example { color: DarkMagenta ; }
 
 &nbsp; id :     <span class="type">int</span>     { <span class="annot">@Id, @AutoIncremented</span> } ; <span class="comment">// this id is autoincremented </span> <br>
 &nbsp; name :   <span class="type">string</span>  { <span class="annot">@SizeMax(40)</span> } ; <br>
-&nbsp; year :   <span class="type">short</span>   { <span class="annot">@Min(1900), @Max(2020)</span> } ;<br>
+&nbsp; year :   <span class="type">short</span>   { <span class="annot">@Min(1900), <br>
+&nbsp; &nbsp; &nbsp; @Max(2020)</span> } ;<br>
 &nbsp; price :  <span class="type">float</span>   { <span class="annot">@Min(500), @Max(99999)</span> };<br>
 &nbsp; brand :  <span class="entity">Brand</span> { <span class="annot">@NotNull</span> } ;<br>
 &nbsp; driver : <span class="entity">Driver</span>[]  ;<br>
@@ -186,6 +187,8 @@ Structure : <br>
 <span class="example">
 &nbsp; &nbsp; attributeName : attributeType { annotations } ; <br>
 </span>
+<br>
+An attribute definition can span over multiple lines<br>
 </p>
 </div>
 <!--   ----------   -->
