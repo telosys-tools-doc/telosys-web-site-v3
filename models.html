@@ -78,41 +78,17 @@ img.center { display: block; margin-left: auto; margin-right: auto; width: 50%; 
                 <div class="intro-messageRedux">
                  -->
                  <br><br><br>
-                 <!-- 
-                    <img class="img-responsive" style="margin-left:auto;margin-right:auto;"
-                         src="img/modelsPage/telosys_text_white_right_450x100.png" alt="">
-                  -->
                          
-                    <h1 style="font-size:44px;" >Telosys models</h1>
+<h1 style="font-size:44px;" >Telosys models</h1>
                     
-                    <hr class="intro-divider">
-                    <p class="lead">A Telosys model contains the entities definitions that will be used to generate the code.
-                    <br>
-                        <br>Telosys works with 2 kinds of models : « <b>Database Model</b> » and « <b>DSL Model</b> »
-                  <!-- 
-                    <hr class="intro-divider">
-                    <ul class="list-inline">
-                        <li class="package">
-                            <a href="https://marketplace.visualstudio.com/items?itemName=telosysteam.telosys">
-                                <img class="img-responsive imgRes" src="img/cliPage/captureVsCode.png"
-                                     alt="">
-                                Visual Studio Code Integration
-                            </a>
-                        </li>
-                        <li class="package">
-                            <a href="#setup">
-                                <img class="img-responsive imgRes" src="img/cliPage/captureCLI.png" alt="">
-                                Command Line Interface
-                            </a>
-                        </li>
-                        <li class="package">
-                            <a href="https://atom.io/packages/telosys">
-                                <img class="img-responsive imgRes" src="img/cliPage/captureAtom.png" alt="">
-                                Atom Integration
-                            </a>
-                        </li>
-                    </ul>
-                   -->
+<hr class="intro-divider">
+
+<p class="lead">
+ A Telosys model contains the entities definitions that will be used to generate the code.<br>
+ <br>
+ Telosys works with 2 kinds of models : « <b>Database Model</b> » and « <b>DSL Model</b> ».<br>
+ <br>
+ The model type has no impact on code generation. The same templates can be used whatever type of model.<br>
 <!--                 </div> 
             </div>-->
         </div>
@@ -131,7 +107,7 @@ img.center { display: block; margin-left: auto; margin-right: auto; width: 50%; 
 <h2 class="section-heading" >Database Model</h2>
 <p class="lead">
 A <b>Database Model</b> is created automatically by Telosys from an existing relational database.<br>
-The user just have to provide the connection configuration ("databases.dbcgf" file)
+The user just have to provide the connection configuration ("databases.dbcgf" file)<br>
 and the JDBC driver required to connect to the database (".jar" file).<br>
 </p>                
                 <!-- <img class="img-responsive" src="img/modelsPage/db-model.png" alt="">  -->
@@ -156,13 +132,18 @@ The model file can be edited with any editor or with the Telosys Eclipse plugin 
 <h2 class="section-heading">DSL Model</h2>
 <p class="lead">
 The <b>DSL Model</b> is used to create a model from scratch.<br>
-The user just have to ask Telosys to initialize a new DSL model then each entity is created or updated using a text file (".entity" file) for each entity.
+The user just ask Telosys to initialize a new DSL model then entities can be created or updated.<br>
+A DSL model is materialized by a ".model" file and a folder that contains all the entities <br>
+(e.g. for "abc" : "abc.model" file and "abc_model" folder).<br>
+Each entity is defined in a text file having the ".entity" extension (e.g. "Car" is defined in "Car.entity").
 </p>
 	<img class="center" src="img/modelsPage/dsl-model.png" alt="">
 	<br>
 	<br>
 <p class="lead">
-Each entity is defined by using a very simple syntax allowing to define attributes and relationships.<br>
+Entities files can be edited with any kind of editor but the editors extensions (VSCode, Atom)<br>
+ or the Eclipse plugin are recommended for a better comfort.<br>
+An entity is described by using a very simple syntax allowing to define attributes and relationships.<br>
 For more information see the <a href="dsl-syntax.html">DSL syntax</a>.
 </p>
             </div>

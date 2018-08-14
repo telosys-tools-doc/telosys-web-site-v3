@@ -136,13 +136,15 @@ Comments are only "single line"<br>
 <p class="title">Entity structure  </p>
 <p class="code" >
 The entity's structure is composed of the entity name 
-followed by a block containing all the entity's attributes <br>
-The block of attributes starts with '{' and ends with '}'<br>
+followed by a block containing all the entity's attributes.<br>
+The block of attributes starts with '{' and ends with '}'.<br>
+"End Of Line" characters are not significant. They are used only for readability.<br>
+Potentially all the entity can be described in a single line.<br>
 <br>
 Structure : <br>
 <span class="example">
 &nbsp; &nbsp; EntityName {  <br>
-&nbsp; &nbsp; &nbsp; attributes list <br>
+&nbsp; &nbsp; &nbsp; // attributes list <br>
 &nbsp; &nbsp; } <br>
 </span>
 </p>
@@ -153,11 +155,10 @@ Structure : <br>
 <div class="box">
 <p class="title">Entity name  </p>
 <p class="code" >
-<br>
-The name of the entity must be composed of letters and numbers and "_" (underscore)<br>
-Other characters are not allowed<br>
-By convention the name usually starts with an upper case character <br>
-The entity name must be the same as the file name ( "Car.entity" => "Car" )<br>
+The entity name can be composed of : letters, numbers, "_" (underscore)<br>
+Other characters are not allowed.<br>
+By convention the name usually starts with an upper case character.<br>
+The entity name must be the same as the file name ( "Car.entity" => "Car" ).<br>
 <br>
 Examples of valid entity names : <br>
 &nbsp; . <span class="example">Car </span><br>
@@ -179,7 +180,7 @@ Examples of invalid entity names : <br>
 An attribute structure is composed of <br>
 . attribute <span class="example">name</span> <br>
 . <span class="example">":" separator </span><br>
-. attribute <span class="example">type</span> (or reference)<br>
+. attribute <span class="example">type</span> (basic type or reference)<br>
 . optional <span class="example">annotations</span> defined between '{' and '}' <br>
 . <span class="example">";" separator</span> (closing the attribute definition)<br>
 <br>
@@ -197,9 +198,9 @@ An attribute definition can span over multiple lines<br>
 <div class="box">
 <p class="title">Attribute name  </p>
 <p class="code" >
-The attribute name must be composed of letters and numbers and "_" (underscore)<br>
-Other characters are not allowed<br>
-By convention the name usually starts with an lower case character <br>
+The attribute name can be composed of : letters, numbers, "_" (underscore).<br>
+Other characters are not allowed.<br>
+By convention the name usually starts with a lower case character. <br>
 <br>
 Examples of valid attribute names : <br>
 &nbsp; . <span class="example">age </span><br>
