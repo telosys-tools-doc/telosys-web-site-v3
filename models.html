@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
 
-    <title>Telosys code generator Command Line Interface</title>
-    <meta name="description" content="Telosys is a free code generator usable with different languages or frameworks : Java, JavaScript, Python, NodeJS, PHP, GoLang, C#, Angular, VueJS, etc">
+    <title>Telosys models - Database Model and DSL Model</title>
+    <meta name="description" content="Telosys models - Database Model and DSL Model">
     
     
     <!-- Bootstrap Core CSS -->
@@ -56,13 +56,10 @@ img.center { display: block; margin-left: auto; margin-right: auto; width: 50%; 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#">Xxxxxxx</a>
-                </li>
-                <li>
                     <a href="dsl-syntax.html">DSL syntax</a>
                 </li>
                 <li>
-                    <a href="/download/models-v3/">Download</a>
+                    <a href="/download/models-v3/">Models download</a>
                 </li>
             </ul>
         </div>
@@ -131,10 +128,10 @@ img.center { display: block; margin-left: auto; margin-right: auto; width: 50%; 
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading" >Database model</h2>
+<h2 class="section-heading" >Database Model</h2>
 <p class="lead">
-A Database Model is created automatically by Telosys from an existing relational database.<br>
-The user just have to provide the connection configuration (file "databases.dbcgf")
+A <b>Database Model</b> is created automatically by Telosys from an existing relational database.<br>
+The user just have to provide the connection configuration ("databases.dbcgf" file)
 and the JDBC driver required to connect to the database (".jar" file).<br>
 </p>                
                 <!-- <img class="img-responsive" src="img/modelsPage/db-model.png" alt="">  -->
@@ -144,7 +141,7 @@ and the JDBC driver required to connect to the database (".jar" file).<br>
 <p class="lead">
 Telosys connects to the database and discovers all the tables and their relationships thus it can create or update the model.<br>
 This kind of model is stored in XML format in a single file (the “.dbrep” file) and contains an entity for each table.<br>
-The model file can be edited with any editor or with one provided by Telosys to adapt the model if necessary.
+The model file can be edited with any editor or with the Telosys Eclipse plugin to adapt the model if necessary.
 </p>
             </div>
         </div>
@@ -155,17 +152,19 @@ The model file can be edited with any editor or with one provided by Telosys to 
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">DSL model</h2>
-                <p class="lead">
-The DSL model type is used to create a model from scratch.
-<br>
-This model is composed of a set of text files (one “.entity” file for each entity).
-<br>
-Each entity is defined by using a very simple syntax allowing to define attributes and relationships.
-<br>
-<br>
+            
+<h2 class="section-heading">DSL Model</h2>
+<p class="lead">
+The <b>DSL Model</b> is used to create a model from scratch.<br>
+The user just have to ask Telosys to initialize a new DSL model then each entity is created or updated using a text file (".entity" file) for each entity.
+</p>
+	<img class="center" src="img/modelsPage/dsl-model.png" alt="">
+	<br>
+	<br>
+<p class="lead">
+Each entity is defined by using a very simple syntax allowing to define attributes and relationships.<br>
 For more information see the <a href="dsl-syntax.html">DSL syntax</a>.
-                </p>
+</p>
             </div>
         </div>
     </div> <!-- /.container -->
