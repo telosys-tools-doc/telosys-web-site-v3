@@ -221,7 +221,9 @@ Examples of invalid attribute names : <br>
 <p class="title">Attribute type </p>
 <p class="code" >
 The attribute type can be a "basic type" or a "reference to another entity".<br> 
+</p>
 <hr>
+<p class="code" >
 A "basic type" is a "neutral type" independent of any programming language. <br>
 Available basic types :<br>
 &nbsp; . <span class="example"> binary </span><br>
@@ -239,14 +241,15 @@ Available basic types :<br>
 &nbsp; . <span class="example"> timestamp </span><br>
 All of these "neutral types" are converted into the target language types during generation.<br>
 Telosys offers automatic conversion for most used languages (Java, C#, etc).<br>
+</p>
 <hr>
+<p class="code" >
 A "reference" is defined by using an entity name instead of the basic type. <br>
 The referenced entity must exist in the model (at least the entity file).<br>
 To reference a collection of entities just add "[ ]" after the entity name.<br>
 Examples : <br>
 &nbsp; . <span class="example"> Driver </span> (to reference a single Driver instance, "0..1" cardinality)<br>
-&nbsp; . <span class="example"> Driver&nbsp;[&nbsp;]&nbsp; </span> (to reference a collection of Driver instances, "0..N" cardinality)<br>
-
+&nbsp; . <span class="example"> Driver[&nbsp;] </span> (to reference a collection of Driver instances, "0..N" cardinality)<br>
 </p>
 </div>
 <!--   ----------   -->
