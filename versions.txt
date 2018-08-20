@@ -1,4 +1,6 @@
 
+Font Awesome 4.7.0
+
 Bootstrap : 
 
  bootstrap.css : v3.3.4 (http://getbootstrap.com)   
