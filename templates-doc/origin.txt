@@ -1,0 +1,4 @@
+
+All the files in this folder are copied 
+from the "html" folder in the "TelosysToolsPluginHelp" project
+
