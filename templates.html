@@ -57,8 +57,8 @@ img.center { display: block; margin-left: auto; margin-right: auto; width: 50%; 
             <ul class="nav navbar-nav navbar-right">
                 <li> <a href="https://github.com/telosys-templates-v3">Templates on GitHub</a>  </li>
                 <li> <a href="http://velocity.apache.org/engine/1.7/" >Velocity web site</a>  </li>
-                <li> <a href="templates-doc/templates-language.html"  >Language summary</a>  </li>
-                <li> <a href="templates-doc/templates-objects.html"   >Telosys objects</a>  </li>
+                <li> <a href="templates-doc/templates-language.html"  >Templates language</a>  </li>
+                <li> <a href="templates-doc/templates-objects.html"   >Templates objects</a>  </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -104,7 +104,8 @@ Hence the templates are not model-dependent.<br>
 <br>
 In the template file the context objects are accessible using their symbolic name preceded by the character "$".<br>
 <br>
-Very basic example : 
+Very basic example : <br>
+( for more information see : <a href="#templates-language">templates language documentation</a> )
 </p>
 
 <div style="margin : 0 auto; border-width:1px; border-style:solid; border-color:black; padding:10px;  max-width:560px; text-align: left ; font-size: 16px ; font-family: Courier New; fontfont-weight: bold;">
@@ -114,7 +115,7 @@ Current entity is <span style="color:blue">${entity.name}</span><br>
 &nbsp; Do something with <span style="color:blue">$attrib.name</span> and <span style="color:blue">$attrib.type</span> <br>
 <span style="color:#9900cc" >#end</span><br>
 </div>
-
+<br>
 </div> </div> </div> </div>
 
 <!-- ============================================================================================= -->
@@ -165,9 +166,9 @@ Current entity is <span style="color:blue">${entity.name}</span><br>
 
 <!-- ============================================================================================= -->
 
+<a name="templates-language"></a>
 <div class="content-section-b"> <div class="container"> <div class="row"> <div class="col-lg-12 text-center">
-
-<h2 class="section-heading" >Templates language</h2>
+<h2 class="section-heading" >Templates language documentation</h2>
  <p class="lead">
  The templating language used by Telosys is "VTL" : Velocity Template Language.<br>
  For detailed documentation visit the links bellow
