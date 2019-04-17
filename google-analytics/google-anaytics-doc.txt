@@ -1,0 +1,37 @@
+
+
+See https://support.google.com/analytics/answer/1008080 
+
+--- Find your Google Analytics ID
+
+To find the Google Analytics ID:
+
+    1 - Sign in to your Analytics account ( https://analytics.google.com/ ) 
+    2 - Click "Admin" ( https://support.google.com/analytics/answer/6132368 )
+    3 - Select an account from the menu in the ACCOUNT column.
+    4 - Select a property from the menu in the PROPERTY column : "Property Settings"
+    5 - Under PROPERTY, click "Tracking Info > Tracking Code". Your Google Analytics ID
+
+The tracking ID is a string like UA-000000-2. 
+It must be included in your tracking code to tell Analytics which account and property to send data to.
+
+
+Telosys Tracking Id : UA-138204047-1
+
+
+--- The global site tag
+
+Paste the tag right after the <head> tag on each page of your site. 
+Replace GA_MEASUREMENT_ID with your own Google Analytics Google Analytics ID:
+
+
+
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
