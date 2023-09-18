@@ -64,16 +64,11 @@ img.center { display: block; margin-left: auto; margin-right: auto; width: 50%; 
     </div>
     <!-- /.container -->
 </nav>
+
 <!-- Header -->
-<!-- 
-<div class="intro-header">
- -->
 <div class="banner">
     <div class="container">
         <div class="row text-center" >
-<!--             <div class="col-lg-12">
-                <div class="intro-messageRedux">
-                 -->
                  <br><br><br>
                          
 <h1 style="font-size:44px;" >Telosys models</h1>
@@ -81,42 +76,16 @@ img.center { display: block; margin-left: auto; margin-right: auto; width: 50%; 
 <hr class="intro-divider">
 
 <p class="lead">
- A Telosys model contains the entities definitions that will be used to generate the code.<br>
-  <br>
-<!--                 </div> 
-            </div>-->
+<br>
+A Telosys model contains all the entity definitions that will be used to generate the code.<br>
+<br>
         </div>
     </div> <!-- /.container -->
 </div> <!-- /.intro-header -->
 
 <!-- Page Content -->
 
-<!-- class="content-section-a" = gray background -->
-<!-- class="content-section-b" = white background -->
 
-<div class="content-section-b">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-<h2 class="section-heading" >Database Model</h2>
-<p class="lead">
-A <b>Database Model</b> is created automatically by Telosys from an existing relational database.<br>
-The user just have to provide the connection configuration ("databases.dbcgf" file)<br>
-and the JDBC driver required to connect to the database (".jar" file).<br>
-</p>                
-                <!-- <img class="img-responsive" src="img/modelsPage/db-model.png" alt="">  -->
-                <img class="center" src="img/modelsPage/db-model.png" alt="">
-                <br>
-<br>
-<p class="lead">
-Telosys connects to the database and discovers all the tables and their relationships thus it can create or update the model.<br>
-This kind of model is stored in XML format in a single file (the “.dbrep” file) and contains an entity for each table.<br>
-The model file can be edited with any editor or with the Telosys Eclipse plugin to adapt the model if necessary.
-</p>
-            </div>
-        </div>
-    </div> <!-- /.container -->
-</div> <!-- /.content-section-b -->
 
 <div class="content-section-b">
     <div class="container">
@@ -125,24 +94,29 @@ The model file can be edited with any editor or with the Telosys Eclipse plugin 
             
 <h2 class="section-heading">DSL Model</h2>
 <p class="lead">
-The <b>DSL Model</b> is used to create a model from scratch.<br>
-The user just ask Telosys to initialize a new DSL model then entities can be created or updated.<br>
-A DSL model is materialized by a ".model" file and a folder that contains all the entities <br>
-(e.g. for "abc" : "abc.model" file and "abc_model" folder).<br>
+A "Telosys model" is a model based on a set of text files written with the Telosys "Domain Specific Language". <br>
+The DSL uses a very simple grammar to define entities with their attributes and links. <br>
 Each entity is defined in a text file having the ".entity" extension (e.g. "Car" is defined in "Car.entity").
 </p>
 	<img class="center" src="img/modelsPage/dsl-model.png" alt="">
 	<br>
 	<br>
 <p class="lead">
-Entities files can be edited with any kind of editor but the editors extensions (VSCode, Atom)<br>
- or the Eclipse plugin are recommended for a better comfort.<br>
+All the files defining a model can be edited with any type of text editor.<br>
 An entity is described by using a very simple syntax allowing to define attributes and relationships.<br>
+<br>
 For more information see the documentation.
 </p>
 <a href="https://doc.telosys.org/dsl-model">
 <button type="button" class="btn btn-primary btn-lg">
 <i class="fa fa-book" aria-hidden="true"></i>&nbsp; &nbsp; DSL model documentation</button></a>
+<br>
+<p class="lead">
+<br>
+Note: <br>
+since Telosys 4.0 the old model in XML format (previously used for models from a relational database) no longer exists, <br>
+it is now possible to do everything with a single model format (the DSL model)
+</p>
             </div>
         </div>
     </div> <!-- /.container -->

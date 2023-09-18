@@ -93,15 +93,12 @@ The generator merges the template with the model's entities in order to produce 
 <h2 class="section-heading" >Templates operating principle</h2>
 <p class="lead">
 The "<b>Velocity context</b>" contains all the objects usable in a template.<br>
-All the <b>entities</b> defined in the model and all the project <b>variables</b> are loaded in the context.<br>
+All the <b>entities</b> defined in the model and all the project <b>variables</b> are loaded as objects in the context.<br>
 </p>                
 
  <img class="center" src="img/templatesPage/templates-principle.png" alt=""> <br>
 <br>
 <p class="lead">
-In the context the entities are exposed in the same way regardless of their original model (DSL model or DB model).<br>
-Hence the templates are not model-dependent.<br>
-<br>
 In the template file the context objects are accessible using their symbolic name preceded by the character "$".<br>
 <br>
 Very basic example : <br>
@@ -110,8 +107,8 @@ Very basic example : <br>
 <div style="margin : 0 auto; border-width:1px; border-style:solid; border-color:black; padding:10px;  max-width:560px; text-align: left ; font-size: 16px ; font-family: Courier New; fontfont-weight: bold;">
 Current entity is <span style="color:blue">${entity.name}</span><br>
 <br>
-<span style="color:#9900cc" >#foreach</span>( <span style="color:blue">$attrib</span> in <span style="color:blue">$entity.attributes</span> )<br>
-&nbsp; Do something with <span style="color:blue">$attrib.name</span> and <span style="color:blue">$attrib.type</span> <br>
+<span style="color:#9900cc" >#foreach</span>( <span style="color:blue">$attribute</span> in <span style="color:blue">$entity.attributes</span> )<br>
+&nbsp; Do something with <span style="color:blue">$attribute.name</span> and <span style="color:blue">$attribute.type</span> <br>
 <span style="color:#9900cc" >#end</span><br>
 </div>
 <br>
@@ -148,7 +145,7 @@ Current entity is <span style="color:blue">${entity.name}</span><br>
  <br>
  <img class="center" src="img/templatesPage/multi-bundles.png" alt="" style="max-width:560px; max-height: auto;" />
  <br>
- In general several bundles are needed to generate a complete application.
+ Usually several bundles are needed to generate a complete application.
 </p>
 
 </div> </div> </div> </div>
