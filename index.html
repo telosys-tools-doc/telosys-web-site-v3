@@ -65,12 +65,12 @@
                 <li> <a href="#about">About</a> </li>
                 <li> <a href="#mainsteps">Main steps</a> </li>
              -->
-                <li> <a href="cli.html">Command Line</a> </li>
-                <li> <a href="eclipsePlugin.html">Eclipse Plugin</a> </li>
+                <li> <a href="cli.html">Telosys-CLI</a> </li>
                 <li> <a href="models.html">Models</a> </li>
                 <li> <a href="templates.html">Templates</a> </li>
                 <li> <a href="https://doc.telosys.org">Documentation</a> </li>
                 <li> <a href="sources.html">Sources</a> </li>
+                <li> <a href="eclipsePlugin.html">Eclipse Plugin</a> </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -87,28 +87,17 @@
                 <div class="intro-message">
                     <img class="img-responsive" style="margin-left:auto;margin-right:auto;"
                          src="img/indexPage/telosys_text_white_right_450x100.png" alt="">
-                    <h3>The simplest and lightest code generator</h3>
+                    <h3>lightweight and pragmatic code generator</h3>
                     <hr class="intro-divider">
-                    <h4>Totally free and open source</h4>
+                    <h4>Free and open source</h4>
                     <hr class="intro-divider">
                     
                     <!-- Buttons line : "CLI", "Eclipse Plugin" -->
                     <ul class="list-inline intro-social-buttons">
                         <li>
                             <a href="cli.html" class="btn btn-default btn-lg"><i
-                               class="fa fa-window-maximize fa-fw"></i> <span class="network-name">Command Line </span></a>
+                               class="fa fa-window-maximize fa-fw"></i> <span class="network-name">Telosys-CLI</span></a>
                         </li>
-                        <li>
-                            <a href="eclipsePlugin.html" class="btn btn-default btn-lg"><i 
-                               class="fa fa-adjust fa-fw"></i> <span class="network-name">Eclipse Plugin</span></a>
-                        </li>
-                        <li>
-                            <a href="https://doc.telosys.org" class="btn btn-default btn-lg"><i 
-                               class="fa fa-book fa-fw"></i> <span class="network-name">Documentation</span></a>
-                        </li>
-                    </ul>
-
-                    <ul class="list-inline intro-social-buttons">
                         <li>
                             <a href="models.html" class="btn btn-default btn-lg"><i
                                     class="fa fa-object-group fa-fw"></i> <span class="network-name"> Models </span></a>
@@ -118,9 +107,21 @@
                             <a href="templates.html" class="btn btn-default btn-lg"><i
                                     class="fa fa-files-o fa-fw"></i> <span class="network-name">Templates</span></a>
                         </li>
+
+                    </ul>
+
+                    <ul class="list-inline intro-social-buttons">
+                        <li>
+                            <a href="https://doc.telosys.org" class="btn btn-default btn-lg"><i 
+                               class="fa fa-book fa-fw"></i> <span class="network-name">Documentation</span></a>
+                        </li>
                         <li>
                             <a href="sources.html" class="btn btn-default btn-lg"><i
                                     class="fa fa-github fa-fw"></i> <span class="network-name">Sources</span></a>
+                        </li>
+                        <li>
+                            <a href="eclipsePlugin.html" class="btn btn-default btn-lg"><i 
+                               class="fa fa-adjust fa-fw"></i> <span class="network-name">Eclipse Plugin</span></a>
                         </li>
                     </ul>
 
@@ -180,90 +181,155 @@
 
 <!-- class="content-section-a" = gray background -->
 <!-- class="content-section-b" = white background -->
-<a name="about"></a>
-<div class="content-section-b"> <!-- TEXT + IMAGE (gray background) -->
+<div class="content-section-b"> <!-- TEXT + IMAGE  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-sm-6">
-                <h2 class="section-heading">Project booster</h2>
-                <p class="lead">Telosys is the best developer companion.<br>
-                    <br>
-                    It generates all the plumbing and repetitive code.<br>
-                    It boosts the project kick-off saving many days of development.
-                    <br><br>
-                    <!-- 
-                    <a href="eclipsePlugin.html">
-                        "<b>Telosys studio</b>"</a> is provided as an <b>Eclipse plugin</b>, it allows to set up models,
-                    edit templates and generate the code.
-                    <br><br>
-                    <a href="cli.html">
-                        "<b>Telosys CLI</b>"</a> can be used to launch generation tasks from the <b>command line</b>.
-                     -->
+                <h2 class="section-heading">Easy and simple</h2>
+                <p class="lead">
+Telosys aims to offer code generation for all.<br>
+It's a pragmatic tool, light, flexible and easy to use.<br>
+<br>
+No UML model required. <br>
+Telosys only uses text files for models, templates, configuration, etc.<br>
+<br>
+No lock in. You are not captive to the tool.<br>
+You can you use it temporarily (only for bootstrapping) or keep it for all your project lifecycle, it's up to you.<br>
+<br>
                 </p>
             </div>
             <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                <img class="img-responsive" src="img/indexPage/telosys-booster2.png" alt="">
+                <img class="img-responsive" src="img/indexPage/telosys-easy-simple.png" alt="">
             </div>
         </div>
     </div> <!-- /.container -->
 </div> <!-- /.content-section-a -->
 
-<a name="easy"></a>
-<div class="content-section-b"> <!-- IMAGE + TEXT (white background) -->
+
+<div class="content-section-b"> <!-- IMAGE + TEXT  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                <h2 class="section-heading">Easy and simple</h2>
-                <p class="lead">Telosys aims to offer code generation for all.<br>
-                    It's a pragmatic tool, light and easy to use.<br>
-                    <br>
-                    <b>No UML model required !</b><br>
-                    <br>
-                    You can create a model from scratch or from an existing database.
+                <h2 class="section-heading">Quick start</h2>
+                <p class="lead">
+You can use Telosys with any operating system, only Java is needed.<br>
+<br>
+Download Telosys, unzip and you’re ready to start.<br>
+<br>
+You can install models and templates examples from GitHub 
+to discover how to generate your first pieces of code.<br>        
                 </p>
             </div>
             <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                <img class="img-responsive" src="img/indexPage/telosys-overview.png" alt="">
+                <img class="img-responsive" src="img/indexPage/telosys-quick-start.png" alt="">
             </div>
         </div>
     </div> <!-- /.container -->
 </div> <!-- /.content-section-b -->
 
-<div class="content-section-b"> <!-- TEXT + IMAGE (gray background) -->
+
+<div class="content-section-b"> <!-- TEXT + IMAGE -->
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-sm-6">
+                <h2 class="section-heading">Get your project "on rails"</h2>
+                <p class="lead">
+<br>
+Apply your standards and conventions in Telosys templates.<br>
+<br>
+Guarantee compliance with your best practices. <br>
+<br>
+Reduce overall cost and development time.<br>
+<br>
+                </p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <img class="img-responsive" src="img/indexPage/telosys-on-rails.png" alt="">
+            </div>
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.content-section-a -->
+
+
+<div class="content-section-b"> <!-- IMAGE + TEXT  -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                 <h2 class="section-heading">Multi-targets</h2>
                 <p class="lead">
-                    <br>
-                    Telosys lets you generate code for any type of language, framework, database, tool, etc.
-                    <br><br>
+Telosys lets you generate code for any type of language, framework, database or tool.<br>
+<br>
+<br>
+                </p>
+            </div>
+            <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                <img class="img-responsive" src="img/indexPage/telosys-targets.png" alt="">
+            </div>
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.content-section-b -->
+
+
+<div class="content-section-b"> <!-- TEXT + IMAGE  -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <h2 class="section-heading">Get the code you want</h2>
+                <p class="lead">
+<br>
+Thanks to its great flexibility, you can get exactly the code you want. <br>
+<br>
+You decide, Telosys adapts!<br>
+<br>
                 </p>
             </div>
             <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                <img class="img-responsive" src="img/indexPage/telosys-gen-targets.png" alt="">
+                <img class="img-responsive" src="img/indexPage/telosys-code-you-want.png" alt="">
             </div>
         </div>
     </div> <!-- /.container -->
 </div> <!-- /.content-section-a -->
 
-<div class="content-section-b"> <!-- IMAGE + TEXT (white background) -->
+
+<div class="content-section-b"> <!-- IMAGE + TEXT  -->
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                <h2 class="section-heading">Get the code you want!</h2>
-  <p class="lead">
-    Thanks to its great flexibility, you can get exactly the code you want. <br>
-    <br>
-    You decide, Telosys adapts!
-  </p>
+                <h2 class="section-heading">IDE independent</h2>
+                <p class="lead">
+<br>
+As everything is based on text files, you can use Telosys with any IDE or text editor. <br>
+<br>
+                </p>
             </div>
             <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                <img class="img-responsive" src="img/indexPage/telosys-flexibility.png" alt="">
+                <img class="img-responsive" src="img/indexPage/telosys-ide-indep.png" alt="">
             </div>
         </div>
     </div> <!-- /.container -->
 </div> <!-- /.content-section-b -->
+
+
+<div class="content-section-b"> <!-- TEXT + IMAGE -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <h2 class="section-heading">Model from database</h2>
+                <p class="lead">
+<br>
+Telosys is able to create a model from database tables.<br>
+<br>
+So if you have a relational database, you can convert it to a Telosys model.<br>
+<br>
+<br>
+                </p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <img class="img-responsive" src="img/indexPage/telosys-model-from-db.png" alt="">
+            </div>
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.content-section-a -->
 
 <!-- ===============================  -->
 
