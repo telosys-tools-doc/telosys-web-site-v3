@@ -1,4 +1,3 @@
-
 This directory contains a zip file for each Telosys-CLI version (for download)  
 
 Examples: 
