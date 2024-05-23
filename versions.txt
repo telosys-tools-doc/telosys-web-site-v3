@@ -1,5 +1,7 @@
 
 Font Awesome 4.7.0
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  ( see https://fontawesome.com/search )
 
 Bootstrap : 
 
