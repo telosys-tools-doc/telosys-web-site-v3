@@ -16,7 +16,24 @@ function increment() {
 	fputs($fp,$nb);
 	fclose($fp);
 }
-
+function log_download() {
+	$row = date("Y-m-d ; H:i:s ; ");
+	if ( isset($_SERVER['REMOTE_ADDR']) ) {
+		$row = $row . $_SERVER['REMOTE_ADDR'];
+	}
+	if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
+		$row = $row . ";" . $_SERVER['HTTP_USER_AGENT'];
+	}
+	else {
+		$row = $row . ";" ;
+	}
+	
+	$ym = date("Y-m");
+	$logfile = "log-" . $ym . ".txt";
+	$f = fopen($logfile, "a") or die("Unable to open log file!");
+	fwrite($f, $row . PHP_EOL );
+	fclose($f);
+}
 $fileFound = false ;
 if (isset($_GET['ver'])) {
     //The parameter you need is present
@@ -25,6 +42,7 @@ if (isset($_GET['ver'])) {
 	if ( file_exists($filename) ) {
 		$fileFound = true ;
 		increment();
+		log_download();
 		header("Location:$filename");
 	}
 }
