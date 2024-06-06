@@ -22,10 +22,10 @@ function log_download() {
 		$row = $row . $_SERVER['REMOTE_ADDR'];
 	}
 	if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
-		$row = $row . ";" . $_SERVER['HTTP_USER_AGENT'];
+		$row = $row . " ; " . $_SERVER['HTTP_USER_AGENT'];
 	}
 	else {
-		$row = $row . ";" ;
+		$row = $row . " ; " ;
 	}
 	
 	$ym = date("Y-m");
