@@ -16,24 +16,30 @@ function increment() {
 	fputs($fp,$nb);
 	fclose($fp);
 }
+
 function log_download() {
-	$row = date("Y-m-d ; H:i:s ; ");
+	$SEP = " | ";
+	$dh= date("Y-m-d H:i:s");
+	$row = $dh . $SEP;
 	if ( isset($_SERVER['REMOTE_ADDR']) ) {
 		$row = $row . $_SERVER['REMOTE_ADDR'];
 	}
+	$row = $row . $SEP;
 	if ( isset($_SERVER['HTTP_USER_AGENT']) ) {
-		$row = $row . " ; " . $_SERVER['HTTP_USER_AGENT'];
+		$row = $row . $_SERVER['HTTP_USER_AGENT'];
 	}
-	else {
-		$row = $row . " ; " ;
+	$row = $row . $SEP;
+	if ( isset($_SERVER['QUERY_STRING']) ) {
+		$row = $row . $_SERVER['QUERY_STRING'];
 	}
-	
+
 	$ym = date("Y-m");
 	$logfile = "log-" . $ym . ".txt";
 	$f = fopen($logfile, "a") or die("Unable to open log file!");
 	fwrite($f, $row . PHP_EOL );
 	fclose($f);
 }
+
 $fileFound = false ;
 if (isset($_GET['ver'])) {
     //The parameter you need is present
